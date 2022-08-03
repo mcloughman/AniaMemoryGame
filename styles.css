@@ -1,1 +1,13 @@
+#grid {
+  width: 660px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
+img {
+  width: 150px;
+  height: 200px;
+  margin-top: 20px;
+}
