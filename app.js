@@ -66,6 +66,11 @@ function createBoard() {
   });
 }
 createBoard();
+function checkMatch() {
+  cardsChosen[0] === cardsChosen[1]
+    ? alert("Match!")
+    : alert("Sorry. No Match");
+}
 
 function flipCard() {
   let cardId = this.getAttribute("data-id");
@@ -73,4 +78,7 @@ function flipCard() {
   cardsChosen.push(cardArray[cardId].name);
   console.log(cardsChosen);
   this.setAttribute("src", cardArray[cardId].img);
+  if (cardsChosen.length === 2) {
+    setTimeout(checkMatch, 500);
+  }
 }
