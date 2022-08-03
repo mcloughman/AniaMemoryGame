@@ -52,8 +52,9 @@ const cardArray = [
 cardArray.sort(() => 0.5 - Math.random());
 
 const gridDisplay = document.querySelector("#grid");
-const cardsChosen = [];
-const cardsChosenIds = [];
+let cardsChosen = [];
+let cardsChosenIds = [];
+const cardsWon = [];
 
 function createBoard() {
   cardArray.forEach((cardElement, i) => {
@@ -74,7 +75,10 @@ function checkMatch() {
     cards[cardsChosenIds[1]].setAttribute("src", "images/white.png");
     cards[cardsChosenIds[0]].removeEventListener("click", flipCard);
     cards[cardsChosenIds[1]].removeEventListener("click", flipCard);
+    cardsWon.push(cardsChosen);
   }
+  cardsChosen = [];
+  cardsChosenIds = [];
 }
 
 function flipCard() {
