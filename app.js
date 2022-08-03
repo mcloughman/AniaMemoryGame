@@ -70,7 +70,13 @@ function checkMatch() {
   const cards = document.querySelectorAll("#grid img");
   const optionOneId = cardsChosenIds[0];
   const optionTwoId = cardsChosenIds[1];
-  if (cardsChosen[0] === cardsChosen[1]) {
+  if (optionOneId === optionTwoId) {
+    alert("You Clicked the Same Card");
+    cards[optionOneId].setAttribute("src", "images/blank.png");
+  }
+
+  if (cardsChosen[0] === cardsChosen[1] && optionOneId !== optionTwoId) {
+    console.log(optionOneId, optionTwoId);
     alert("You Found a Match!");
     cards[optionOneId].setAttribute("src", "images/white.png");
     cards[optionTwoId].setAttribute("src", "images/white.png");
